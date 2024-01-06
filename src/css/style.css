@@ -4,10 +4,11 @@ main {
 }
 
 .no-margin {
-    margin-bottom: 0!important;
-    margin-top: 0!important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
 }
 
 .text-sm {
+    font-size: 14px; /* Fallback */
     font-size: 0.7rem;
 }
