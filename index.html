@@ -14,7 +14,9 @@
     <body>
         <main class="container">
             <section id="title-container" class="row">
-                <h1 class="display-4 border-bottom mb-5">Dynamic Hero Search</h1>
+                <h1 class="display-4 border-bottom mb-5">
+                    Dynamic Hero Search
+                </h1>
             </section>
 
             <section id="search-container" class="row">
@@ -42,8 +44,16 @@
                 </form>
             </section>
 
-            <section id="hero-container" class="row">
-                <ul id="hero-list" class="list-group list-group-flush"></ul>
+            <section id="table-container" class="row">
+                <table id="hero-table" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Publisher</th>
+                        </tr>
+                    </thead>
+                    <tbody id="hero-table-body"></tbody>
+                </table>
             </section>
         </main>
         <script

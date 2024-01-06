@@ -53,9 +53,9 @@ const superheroes = [
     },
 ];
 
-const elList = document.getElementById("hero-list");
-const elSearchBox = document.getElementById("search-box");
-const elSearchGroup = document.getElementById("search-group");
+const searchBox = document.getElementById("search-box");
+const searchGroup = document.getElementById("search-group");
+const heroTableBody = document.getElementById("hero-table-body");
 
 function preventSubmit() {
     return false; // Returning false prevents the form from submitting
@@ -63,10 +63,9 @@ function preventSubmit() {
 
 function createSuperheroList(superheroes) {
     superheroes.forEach((superhero) => {
-        const elItem = document.createElement("li");
-        elItem.textContent = `${superhero.name} by ${superhero.publisher}`;
-        elItem.classList.add("list-group-item");
-        elList.appendChild(elItem);
+        const tableRow = document.createElement("tr");
+        tableRow.innerHTML = `<td>${superhero.name}</td><td>${superhero.publisher}</td>`;
+        heroTableBody.appendChild(tableRow);
     });
 }
 
@@ -75,19 +74,19 @@ function filterSearch(e) {
         return (
             superhero.name
                 .toLowerCase()
-                .includes(elSearchBox.value.toLowerCase()) ||
+                .includes(searchBox.value.toLowerCase()) ||
             superhero.publisher
                 .toLowerCase()
-                .includes(elSearchBox.value.toLowerCase())
+                .includes(searchBox.value.toLowerCase())
         );
     });
-    elList.innerHTML = "";
+    heroTableBody.innerHTML = "";
     createSuperheroList(outputList);
 }
 
-elSearchBox.addEventListener("keyup", filterSearch);
+searchBox.addEventListener("keyup", filterSearch);
 
-elSearchGroup.addEventListener("submit", (e) => {
+searchGroup.addEventListener("submit", (e) => {
     e.preventDefault();
 });
 
