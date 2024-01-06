@@ -3,24 +3,26 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Dynamic Hero Search</title>
     </head>
     <body>
-        <div id="title">
-            <h1>Filter Test</h1>
-        </div>
-        <div id="s">
-            <form>
-                <input
-                    type="text"
-                    name="search"
-                    placeholder="Search"
-                    id="searchbox"
-                />
-                <input type="submit" value="Search" />
-            </form>
-        </div>
-        <div id="list"></div>
+        <main>
+            <section id="title-container">
+                <h1>Dynamic Hero Search</h1>
+            </section>
+            <section id="search-container">
+                <form>
+                    <input
+                        type="text"
+                        name="search"
+                        placeholder="Search"
+                        id="search-box"
+                    />
+                    <input type="submit" value="Search" />
+                </form>
+            </section>
+            <div id="hero-list"></div>
+        </main>
         <script src="./src/js/script.js"></script>
     </body>
 </html>

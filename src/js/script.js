@@ -53,8 +53,8 @@ const superheroes = [
     },
 ];
 
-const elList = document.getElementById("list");
-const elSearchBox = document.getElementById("searchbox");
+const elList = document.getElementById("hero-list");
+const elSearchBox = document.getElementById("search-box");
 
 function createSuperheroList(superheroes) {
     superheroes.forEach((superhero) => {
