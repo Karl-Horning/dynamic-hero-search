@@ -96,6 +96,11 @@
      * @param {Array} superheroes - Array of superhero objects.
      */
     const createSuperheroList = (superheroes) => {
+        superheroes =
+            superheroes.length > 0
+                ? superheroes
+                : [{ name: "No hero found", publisher: "No publisher found" }];
+
         superheroes.forEach((superhero) => {
             const tableRow = createTableRow(superhero);
             heroTableBody.appendChild(tableRow);
@@ -105,12 +110,10 @@
     /**
      * Creates an alphabetically sorted list of superheroes and updates the hero table.
      */
-    const createSortedSuperheroList = () => {
-        const sortedSuperheroes = superheroes
-            .slice()
-            .sort((a, b) => a.name.localeCompare(b.name));
-        createSuperheroList(sortedSuperheroes);
-    };
+    const createSortedSuperheroList = () =>
+        createSuperheroList(
+            superheroes.sort((a, b) => a.name.localeCompare(b.name))
+        );
 
     /**
      * Filters the superhero list based on the search input.
