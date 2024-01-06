@@ -168,6 +168,7 @@
      * Initializes the page by creating a sorted superhero list and setting copyright info.
      */
     window.addEventListener("load", () => {
+        searchBox.focus();
         createSortedSuperheroList();
         getCopyrightInfo();
     });
