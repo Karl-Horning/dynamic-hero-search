@@ -55,11 +55,17 @@ const superheroes = [
 
 const elList = document.getElementById("hero-list");
 const elSearchBox = document.getElementById("search-box");
+const elSearchGroup = document.getElementById("search-group");
+
+function preventSubmit() {
+    return false; // Returning false prevents the form from submitting
+}
 
 function createSuperheroList(superheroes) {
     superheroes.forEach((superhero) => {
         const elItem = document.createElement("li");
         elItem.textContent = `${superhero.name} by ${superhero.publisher}`;
+        elItem.classList.add("list-group-item");
         elList.appendChild(elItem);
     });
 }
@@ -80,6 +86,10 @@ function filterSearch(e) {
 }
 
 elSearchBox.addEventListener("keyup", filterSearch);
+
+elSearchGroup.addEventListener("submit", (e) => {
+    e.preventDefault();
+});
 
 window.onload = createSuperheroList(
     superheroes.sort((a, b) => {

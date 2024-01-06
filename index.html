@@ -4,25 +4,53 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dynamic Hero Search</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
     </head>
     <body>
-        <main>
-            <section id="title-container">
-                <h1>Dynamic Hero Search</h1>
+        <main class="container">
+            <section id="title-container" class="row">
+                <h1 class="display-4 border-bottom mb-5">Dynamic Hero Search</h1>
             </section>
-            <section id="search-container">
-                <form>
-                    <input
-                        type="text"
-                        name="search"
-                        placeholder="Search"
-                        id="search-box"
-                    />
-                    <input type="submit" value="Search" />
+
+            <section id="search-container" class="row">
+                <form id="search-group">
+                    <div class="input-group mb-5">
+                        <input
+                            type="text"
+                            name="search"
+                            class="form-control"
+                            placeholder="Search"
+                            aria-label="Search"
+                            aria-describedby="search-button"
+                            id="search-box"
+                            tabindex="1"
+                        />
+                        <button
+                            class="btn btn-primary"
+                            type="submit"
+                            id="search-button"
+                            tabindex="2"
+                        >
+                            Search
+                        </button>
+                    </div>
                 </form>
             </section>
-            <div id="hero-list"></div>
+
+            <section id="hero-container" class="row">
+                <ul id="hero-list" class="list-group list-group-flush"></ul>
+            </section>
         </main>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
         <script src="./src/js/script.js"></script>
     </body>
 </html>
