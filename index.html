@@ -22,24 +22,35 @@
 
             <section id="search-container" class="row">
                 <form id="search-group">
+                    <label for="search-box" class="form-label visually-hidden"
+                        >Search for a hero or publisher</label
+                    >
                     <div class="input-group mb-5">
                         <input
-                            type="text"
-                            name="search"
-                            class="form-control"
-                            placeholder="Search for a hero or publisher"
-                            aria-label="Search"
-                            aria-describedby="search-button"
                             id="search-box"
+                            class="form-control"
+                            aria-describedby="search-button"
+                            aria-label="Search"
+                            name="search"
+                            placeholder="Search for a hero or publisher"
                             tabindex="1"
+                            type="text"
                         />
                         <button
-                            class="btn btn-primary"
-                            type="submit"
                             id="search-button"
+                            class="btn btn-primary"
                             tabindex="2"
+                            type="submit"
                         >
                             Search
+                        </button>
+                        <button
+                            id="clear-button"
+                            class="btn btn-outline-primary"
+                            tabindex="3"
+                            type="button"
+                        >
+                            Clear Search
                         </button>
                     </div>
                 </form>
@@ -58,7 +69,9 @@
             </section>
 
             <footer class="border-top py-3">
-                <p class="text-center text-sm no-margin">© 2023 Karl Horning</p>
+                <p id="copyright-info" class="text-center text-sm no-margin">
+                    © 2023 Karl Horning
+                </p>
             </footer>
         </main>
         <script
